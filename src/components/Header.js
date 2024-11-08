@@ -1,39 +1,42 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 function Header() {
     return (
         <Nav>
-            <Logo src="/images/logo.svg" />
+            <Link to="/">
+                <Logo src="/images/logo.svg" />
+            </Link>
 
             <NavMenu>
                 <a>
                     <img src="/images/home-icon.svg" />
-                    <span>HOME</span>                      
+                    <span>HOME</span>
                 </a>
                 <a>
                     <img src="/images/search-icon.svg" />
-                    <span>SEARCH</span>                      
+                    <span>SEARCH</span>
                 </a>
                 <a>
                     <img src="/images/watchlist-icon.svg" />
-                    <span>WATCHLIST</span>                      
+                    <span>WATCHLIST</span>
                 </a>
                 <a>
                     <img src="/images/original-icon.svg" />
-                    <span>ORIGINALS</span>                      
+                    <span>ORIGINALS</span>
                 </a>
                 <a>
                     <img src="/images/movie-icon.svg" />
-                    <span>MOVIES</span>                      
+                    <span>MOVIES</span>
                 </a>
                 <a>
                     <img src="/images/series-icon.svg" />
-                    <span>SERIES</span>                      
+                    <span>SERIES</span>
                 </a>
             </NavMenu>
 
-            <UserImg src="https://picsum.photos/200/300" />
+            <UserImg src="./images/naveed.jpeg" />
         </Nav>
     )
 }

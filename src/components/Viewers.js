@@ -5,23 +5,28 @@ function Viewers() {
     return (
         <Container>
             <Wrap>
-                <img src="./images/viewers-disney.png" alt="" />
+                <video src="./videos/disney.mp4" autoPlay loop muted />
+                <img src="./images/viewers-disney.png" alt="Disney" />
             </Wrap>
 
             <Wrap>
-                <img src="./images/viewers-pixar.png" alt="" />
+                <video src="./videos/pixar.mp4" autoPlay loop muted />
+                <img src="./images/viewers-pixar.png" alt="Pixar" />
             </Wrap>
 
             <Wrap>
-                <img src="./images/viewers-marvel.png" alt="" />
+                <video src="./videos/marvel.mp4" autoPlay loop muted />
+                <img src="./images/viewers-marvel.png" alt="Marvel" />
             </Wrap>
 
             <Wrap>
-                <img src="./images/viewers-starwars.png" alt="" />
+                <video src="./videos/star-wars.mp4" autoPlay loop muted />
+                <img src="./images/viewers-starwars.png" alt="Star Wars" />
             </Wrap>
 
             <Wrap>
-                <img src="./images/viewers-national.png" alt="" />
+                <video src="./videos/national-geographic.mp4" autoPlay loop muted />
+                <img src="./images/viewers-national.png" alt="National Geographic" />
             </Wrap>
         </Container>
     )
@@ -38,23 +43,41 @@ const Container = styled.div`
 `
 
 const Wrap = styled.div`
-
+    position: relative;
     border-radius: 10px;
     cursor: pointer;
     border: 3px solid rgba(249, 249, 249, 0.1);
     box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(0 0 0 / 73%) 0px 16px 10px -10px;
     transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+    overflow: hidden;
 
     img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        
+        position: relative;
+        z-index: 1;
+    }
+
+    video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 250ms ease-in-out;
+        z-index: 0;
     }
 
     &:hover {
         transform: scale(1.05);
         border-color: rgba(249, 249, 249, 0.8);
         box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px, rgb(0 0 0 / 72%) 0px 30px 22px -10px;
+    }
+
+    &:hover video {
+        opacity: 1;
     }
 `
