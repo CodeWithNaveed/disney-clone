@@ -36,7 +36,9 @@ function Header() {
                 </a>
             </NavMenu>
 
-            <UserImg src="./images/naveed.jpeg" />
+            <Link to="/login">
+                <UserImg src="./images/naveed.jpeg" />
+            </Link>
         </Nav>
     )
 }
